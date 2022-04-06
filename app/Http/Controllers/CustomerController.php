@@ -46,7 +46,6 @@ class CustomerController extends Controller
       ]);
       event(new CustomerEvent($user));
       return redirect('customerview');
-
     }
   }
 

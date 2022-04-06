@@ -28,13 +28,11 @@ class CustomerListener
      * @param  \App\Providers\CustomerEvent  $event
      * @return void
      */
+    
     public function handle(CustomerEvent $event)
-{                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       
-        
-
+    {    
         // dd($event->user->email);
         $user = CustomerNew::find($event->user);
-        
         $email = $user['0']['email'];
         dispatch(new SendEmailJob($email));
     }
